@@ -13,16 +13,15 @@ def download_instrument_file_csv(stock_exchange):
     Raises ValueError: If an invalid stock exchange is provided.
     """
     try:
-        if stock_exchange=="NSE":
-            url = "https://assets.upstox.com/market-quote/instruments/exchange/NSE.csv.gz"
-        elif stock_exchange=="BSE":
-            url="https://assets.upstox.com/market-quote/instruments/exchange/BSE.csv.gz"
-        elif stock_exchange=="MCX":
-            url="https://assets.upstox.com/market-quote/instruments/exchange/MCX.csv.gz"
-        elif stock_exchange=="complete":
-            url="https://assets.upstox.com/market-quote/instruments/exchange/complete.csv.gz"
-        else:
+        url_map = {
+            "NSE": "https://assets.upstox.com/market-quote/instruments/exchange/NSE.csv.gz",
+            "BSE": "https://assets.upstox.com/market-quote/instruments/exchange/BSE.csv.gz",
+            "MCX": "https://assets.upstox.com/market-quote/instruments/exchange/MCX.csv.gz",
+            "complete": "https://assets.upstox.com/market-quote/instruments/exchange/complete.csv.gz"
+        }
+        if stock_exchange not in url_map:
             raise ValueError("Invalid stock exchange. Accepted values are 'NSE', 'BSE', 'MCX', 'complete'.")
+        url = url_map[stock_exchange]
         response = requests.get(url)
         with open(f"{stock_exchange}.csv.gz", 'wb') as f:
             f.write(response.content)
