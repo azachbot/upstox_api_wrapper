@@ -4,7 +4,7 @@ Upstox Wrapper is a Python library designed to provide a simplified and user-fri
 
 Installation
 ------------
-pip install uwrapper==0.0.7
+pip install uwrapper==0.0.8
 
 Contributing
 ------------
