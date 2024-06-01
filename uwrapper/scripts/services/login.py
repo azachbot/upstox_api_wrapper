@@ -3,7 +3,15 @@ import urllib.parse
 import requests
 
 def login(apikey,secretkey,rurl):
-    """ logging into upstox """
+    """ Fuction to acquire an access token via an authorization_code exchange
+    Args:
+        apikey (str): Upstox Api key
+        secretkey (str): Upstox Api secret code
+        rurl (str): Redirect uri
+
+    Returns:
+        str: Access token
+    """
     rurl_parsed=urllib.parse.quote(rurl,safe="")
     uri=f'https://api-v2.upstox.com/login/authorization/dialog?response_type=code&client_id={apikey}&redirect_uri={rurl_parsed}'
     print("Visit the following URL to authorize your application:")
