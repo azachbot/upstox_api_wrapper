@@ -6,8 +6,8 @@ Installation
 ------------
 pip install uwrapper==0.0.8
 
-Usage
--------
+How to Use
+------------
 Please refer https://github.com/azachbot/upstox_api_wrapper/blob/main/example.ipynb
 
 Contributing
