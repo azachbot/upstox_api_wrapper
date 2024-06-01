@@ -11,7 +11,7 @@ def get_configs():
     configs_data={}
     config_path="config/config.ini"
     config=get_config_file_obj(config_path)
-    sections=['upstox_login','upstox_url','nse_url']
+    sections=['upstox_url']
     for section in sections:
         for key,value in config.items(section):
             configs_data[key]=value
