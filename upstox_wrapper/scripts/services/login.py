@@ -1,5 +1,5 @@
 """upstox login"""
-from ...config.config import *
+from ...config.config import get_configs
 import urllib.parse
 import requests
 
